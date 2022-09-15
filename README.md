@@ -152,3 +152,16 @@ public function build()
 ```
 https://www.youtube.com/watch?v=6xzGBH2jgOY
 ```
+
+## Laravel custom resource
+- reference:
+```
+https://laravel.com/docs/9.x/eloquent-resources
+```
+- To generate a resource class, you may use the ```make:resource``` Artisan command. By default, resources will be placed in the ```app/Http/Resources``` directory of your application. Resources extend the ```Illuminate\Http\Resources\Json\JsonResource``` class:
+
+```
+php artisan make:resource UserResource
+```
+
+-
