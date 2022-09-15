@@ -76,10 +76,10 @@ class DemoRequest extends FormRequest
 use App\Http\Requests\DemoRequest;
 
 public function store(DemoRequest $request)
-    {
-        $request->validated();
-        return $request->input();
-    }
+{
+    $request->validated();
+    return $request->input();
+}
 ```
 
 ## Laravel custom providers
