@@ -2,7 +2,7 @@
 - First have to register helper file in composer:
 - Your composer.json looks like this.
 
-```
+```composer
 "autoload": {
     "classmap": [
         ...
@@ -30,7 +30,7 @@ php artisan make:request DemoRequest
 - Your all request file will be Here.
 - For example you have to validate your user storing method in ```DemoRequest.php``` than you have to put your validation logic in ```rules()``` method.
 - You must have to ```true``` your ```authorize()``` method otherwise it won't working.
-```
+```php
 <?php
 
 namespace App\Http\Requests;
@@ -72,7 +72,7 @@ class DemoRequest extends FormRequest
 
 - You have to use this in your controller and just put it with request like this.
 
-```
+```php
 use App\Http\Requests\DemoRequest;
 
 public function store(DemoRequest $request)
@@ -96,7 +96,7 @@ php artisan make:provider NavigationServiceProvider
 - Now put you custom logic in ```boot()``` method.
 - ```My boot method```
 
-```
+```php
 public function boot()
 {
     view()->composer('*',function($view){ // $view is for globally in project and  '*' after the composer this said for all URLs.
@@ -107,7 +107,7 @@ public function boot()
 ```
 - Now the final step is using you can use it where you want in my case I used it globally for that i used in my ```nav.blade.php```
 - And my blade file looks like this.
-```
+```php
 @foreach($pages as $page)
     <a href="/{{ $page->slug }}">{{ $page->title }}</a>
 @endforeach
@@ -136,7 +136,7 @@ php artisan make:mail TestMail --markdown=emails.testmail
 - There is 2 methods ```1)__construct()``` and ```2)build()```.
 - So I put the recipient mail in ```build()``` method and its looks like this.
 
-```
+```php
 public function build()
 {
     return $this->from('testnihir@gmail.com') // here put your recipient's mail.
